@@ -41,7 +41,26 @@ console.log(hasEnglish("SMFENgliSHasnD")); // Input: "SMFENgliSHasnD" | Output: 
 
 
 // Given an array of integers, write a function that returns an array of 2 integers. The first integer will be the count of the positive integers, and the second integer will be the sum of the negative integers. If the input is empty or null, return an empty array.
-//
+
+function posAndNeg(sequence) {
+    if (sequence === [] || sequence === null) {
+        return [];
+    }
+    let numPos = 0;
+    let sumNeg = 0;
+    for(let i = 0; i < sequence.length; i++) {
+        if(sequence[i] >= 0) {
+            numPos++
+            console.log(numPos);
+        } else {
+            sumNeg += sequence[i];
+            console.log(sumNeg);
+        }
+    }
+    return [numPos, sumNeg]
+
+}
+
 //     Examples:
 //
 //

@@ -66,6 +66,8 @@ function posAndNeg(sequence) {
 //
 // Input: [1, -6, 5, 4, 3, -7, -10, 201, -3] | Output: [5, -26]
 // Input: null | Output: []
+
+
 // Write a function that translates an input string by replacing each character with a number representing the amount of times that character appears in the string. Then separate each individual number with a different character.
 //
 //     Examples:
@@ -73,6 +75,28 @@ function posAndNeg(sequence) {
 //
 // Input: "hello world", "-" | Output: "1-1-3-3-2-1-1-2-1-3-1"
 // Input: "challenge", "/" | Output: "1/1/1/2/2/2/1/1/2"
+
+function countInArray(array, letter) {
+    let count = 0;
+    for (let i = 0; i < array.length; i++ ) {
+        if(array[i] === letter) {
+            count++;
+
+        }
+    }
+    return count;
+}
+
+function stringToNumCount(string, separator) {
+    let array = string.split("");
+    let numArray = [];
+    for(let i = 0; i < array.length; i++) {
+        let l = string.charAt(i);
+        numArray.push(countInArray(array, l))
+    }
+    return numArray.join(separator);
+}
+
 // Given a string of names like this: "Travis:Meyer;Gene:Carangal;Tom:Young;Jeff:Meyer", write a function that makes the entire string uppercase and sorts it in alphabetical order by last name. If the last names are the same sort them by the first name. Put the last name in front of the first name, remove the colons and semicolons, put the names in parentheses and separate the names with commas.
 //
 //     Example:
@@ -115,6 +139,8 @@ function posAndNeg(sequence) {
 // Input: multiply(5, 6) | Output: 30
 // Input: multiply(-1, 15) | Output: -15
 // Input: multiply(-2, -7) | Output: 14
+
+
 // Write a function that takes a string and returns true if all of the characters are the same case, false otherwise.
 //
 //     Examples:

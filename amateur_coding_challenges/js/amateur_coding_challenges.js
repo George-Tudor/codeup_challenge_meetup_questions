@@ -91,8 +91,8 @@ function stringToNumCount(string, separator) {
     let array = string.split("");
     let numArray = [];
     for(let i = 0; i < array.length; i++) {
-        let l = string.charAt(i);
-        numArray.push(countInArray(array, l))
+        let letter = string.charAt(i);
+        numArray.push(countInArray(array, letter))
     }
     return numArray.join(separator);
 }
